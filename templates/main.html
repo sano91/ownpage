@@ -1,51 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% extends "layouts.html" %}
+{% block body %}
+<div class="background">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <link rel="stylesheet" href="/static/style.css">
-    <meta name="description" content="myhome">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body><div class="background">
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cards">Cards</a>
+                </li><li class="nav-item">
+                    <a class="nav-link" id="login" onclick="openlogin()">Login</a>
+                </li><li class="nav-item">
+                    <a class="nav-link" id="register" onclick="openForm()">Register</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/policy">About us</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" id="adminInNav">Admin</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/cards">Cards</a>
-      </li><li class="nav-item"><a class="nav-link" href="/policy">Policy</a> </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Admin</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+<form action="/regis" id="registe" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">User name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="new_user" aria-describedby="emailHelp" placeholder="Your Username">
+    <small id="emailHelp" class="form-text text-muted">We'll never judge you for anything.</small>
   </div>
-</nav>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form >
+<div class="form-popup" id="myForm">
+  <form action="/login" class="form-container" method="post">
+    <h1 id="loginheader">Login</h1>
+
+    <label for="emai"><b>Username</b></label>
+    <input  id="emai" type="text" placeholder="Username" name="username" required>
+
+    <label for="pswd"><b>Password</b></label>
+    <input id="pswd" type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
 </div>
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5XKQ8xNqMp0" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5XKQ8xNqMp0" allowfullscreen></iframe>
 </div>
-<div class="align-self-end">Aligned flex item</div>
-</body>
-</html>
+
+<p><br>svsdvsdvdv<br>gbdbgdsbgsdb<br>srgbrsbrstbsrb<br>gbsdbsdbsd<br>evwevesvservw<br><br></p>
+<div id="makespace"><input type="button" onclick="ali()" id="aliver" value="tester"></div><p>ddd</p>
+{% endblock %}

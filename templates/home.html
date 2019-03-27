@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+{% extends "layouts.html" %}
+{% block body %}
 
-    <meta name="description" content="myhome">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Sarpanch:500" rel="stylesheet">
-</head>
-<body><a href="http://127.0.0.1:5000/main" id="homeheader">Eclipse</a>
+<a href="http://127.0.0.1:5000/main"  onclick="homeheader()" id="homeheader">Eclipse</a>
 
 <div class="animation-wrapper">
 
@@ -61,6 +45,4 @@
 <script>function popOverPlanet() {
     ('[data-toggle="popover"]').popover()
 };
-</script>
-</body>
-</html>
+</script>{% endblock %}
