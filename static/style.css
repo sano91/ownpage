@@ -21,6 +21,11 @@
         width: 580px;
         height: 580px;
         margin: -290px 0 0 -290px;
+        transition: transform 100s;
+
+    }
+    .sphere-animation:hover {
+        transform: rotate(3600deg);
 
     }
 
@@ -42,7 +47,8 @@
     }
 
     #homeheader {
-        font-family: Alien;
+        font-family: 'Sarpanch', sans-serif;
+
         font-size: 3rem;
         color: #dddddd;
         opacity: 0.2;
@@ -112,12 +118,16 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
     background-color: black;
     transition:  color 0.5s;
     transition: background-color 0.6s;
+    transition: text-shadow 5s;
     transition-delay: 0.08s;
+    text-shadow: 4px 4px 5px black;
 }
 
 button.btn.btn-outline-success.my-2.my-sm-0:hover {
     color: black;
     background-color: green;
+    text-shadow: 0px 0px 0px black;
+
 }
 .navbar-brand {
     transition: color 0.4s;
@@ -131,6 +141,7 @@ a.nav-link {
     transition: font-size 0.3s;
     transition: font-weight 0.3s;
     transition: color 0.3s;
+    transition-timing-function: linear;
     transition-timing-function: ease-in-out;
 }
 
@@ -138,4 +149,21 @@ a.nav-link:hover {
     font-size: larger;
     font-weight: bolder;
     color: white;
+}
+.pgraph {
+    animation-duration: 3s;
+    color: white;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+ }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

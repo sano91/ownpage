@@ -16,6 +16,14 @@ def home():
 def main():
     return render_template("main.html")
 
+@app.route('/cards')
+def cards():
+    return render_template('cards.html')
+
+@app.route('/policy')
+def policy():
+    return render_template('policy.html')
+
 if __name__ == "__main__":
     app.run(
         host='0.0.0.0',
