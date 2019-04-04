@@ -122,7 +122,7 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
     color: white;
     background-color: black;
     transition: color 0.5s;
-    transition: background-color 0.6s;
+    transition: background-color 0.5s;
     transition: text-shadow 5s;
     transition-delay: 0.08s;
     text-shadow: 4px 4px 5px black;
@@ -189,27 +189,15 @@ a.nav-link:hover {
     color: #cccccc;
 }
 
-/* Page content */
-.content {
-    padding: 16px;
-}
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-    padding-top: 60px;
-}
 
 #makespace {
-    height: 1400px;
-    width: 100%;
-    background-color: fuchsia;
+    border-top: 3px solid grey;
+    background-color: black;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: auto;
 }
 
 .registerh3 {
@@ -219,7 +207,10 @@ a.nav-link:hover {
 
 form#registe {
     display:none;
-    bottom: 0;
+    padding: 10px;
+
+    max-width: 400px;
+
 }
 
 /* The popup form - hidden by default */
@@ -292,4 +283,104 @@ a#register.nav-link, a#login.nav-link {
 a#adminInNav.nav-link {
     cursor: not-allowed;
     color: #30799B;
+}
+ div.fixed-bottom {
+     justify-content: center;
+     color:white;
+     background-color: black;
+ }
+div.flex-sm-column {
+    padding-bottom: 2.7rem;
+    letter-spacing: 2rem;
+    justify-content: center;
+    justify-items: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bolder;
+    font-style: revert;
+    fill-opacity: 0.3;
+    word-spacing: 6px;
+    box-shadow: white;
+    text-align: center;
+    transition: opacity 0.3s;
+
+
+}
+div.flex-sm-column:hover {
+    opacity: 0.3;
+
+}
+
+a.navbar-brand {
+    cursor: default;
+}
+
+input.form-control {
+    padding-bottom: 1rem;
+    color: white;
+    background-color: black;
+}
+.uploadDescription {
+    color: white;
+    letter-spacing: 0.3rem;
+    font-size: 1.5rem;
+    transition: opacity 0.3s;
+    padding-bottom: 1rem;
+    padding-top: 0.35rem;
+}
+.uploadDescription:hover {
+    opacity: 0.3;
+}
+button.btn.btn-dark {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+button.btn.btn-dark:hover {
+    background-color: white;
+    color: black;
+}
+#loginout {
+    cursor: pointer;
+}
+
+div.tartalom {
+    margin: 2rem;
+    color: #dddddd;
+    padding: 2rem;
+    display: inline-block;
+    background-color: #555555;
+    border-radius: 8px;
+
+}
+
+img {
+    height: auto;
+    width: 220px;
+}
+
+input.likebutton {
+    border-color: unset;
+    background-color: grey;
+    border-radius: 17px;
+}
+
+button.btn.btn-dark.dropdown-toggle {
+    border-radius: 33px;
+}
+
+a.dropdown-item {
+    background-color: black;
+    color: white;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a.dropdown-item:hover {
+    background-color: white;
+    color: black;
+}
+div.dropdown-menu.show {
+    background-color: #343A40;
 }

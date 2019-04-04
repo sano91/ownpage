@@ -1,0 +1,104 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: gainsboro;
+}
+
+.title {
+    font-size: 5rem;
+    color: darkslateblue;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.board-container {
+    height: 100%;
+    width: 100%
+}
+
+.board {
+    width: 618px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    /* add below this second */
+    border: 3px solid mediumslateblue;
+    font-size: 56px;
+    background-color: black;
+    color: white;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+/* make x's and o's two different colors through javascript */
+
+.square:hover {
+    background: floralwhite;
+    cursor: pointer;
+    color: black;
+}
+
+.winner {
+    display: none;
+    padding: 10px;
+    font-size: 32px;
+    color: royalblue;
+}
+
+.reset {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.reset:hover {
+    color: black;
+    background-color: white;
+}
+
+
+/* maybe add an animation */
+
+
+/* .pulsate {
+    -webkit-animation: pulsate 5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+} */
+
+
+/* @-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+        font-size: 40px;
+    }
+    10% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+} */

@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
 
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,58 +17,113 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/cards">Cards</a>
-                </li><li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="login" onclick="openlogin()">Login</a>
-                </li><li class="nav-item">
-                    <a class="nav-link" id="register" onclick="openForm()">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="loginout" href="http://127.0.0.1:5000/logout" onclick="blckbg()">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="register" onclick="openForm()">Sign in</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/policy">About us</a></li>
                 <li class="nav-item">
                     <a class="nav-link" id="adminInNav">Admin</a>
                 </li>
+                <li>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Codecool
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/fibonacci">Fibonacci</a>
+                                <a class="dropdown-item" href="/pets">Pets</a>
+                                <a class="dropdown-item" href="/tic-tac-toe">TicTacToe</a>
+                                <a class="dropdown-item" href="/dragula">Dragula</a>
+                            </div>
+                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" method="post">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 </div>
+{% if unsuccess_registration==True %}
+<div class="alert alert-danger" role="alert">
+    <strong>This username is already taken!</strong> Please choose an other name
+</div>{% endif %}
+<form action="/registration" id="registe" method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">User name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="new_user" aria-describedby="emailHelp"
+               placeholder="Your Username">
+        <small id="emailHelp" class="form-text text-muted">We'll never judge you for anything.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="new_password" id="exampleInputPassword1"
+               placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
 
-<form action="/regis" id="registe" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">User name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="new_user" aria-describedby="emailHelp" placeholder="Your Username">
-    <small id="emailHelp" class="form-text text-muted">We'll never judge you for anything.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" name="new_password" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-dark">Submit</button>
-</form >
+</form>
+{% if invalid_user == True %}
+<div class="alert alert-danger" role="alert">
+    <strong>Unsuccess login!</strong> The username, or the password not correct.
+</div>{% endif %}
 <div class="form-popup" id="myForm">
-  <form action="/login" class="form-container" method="post">
-    <h1 id="loginheader">Login</h1>
+    <form action="/login" class="form-container" method="post">
+        <h1 id="loginheader">Login</h1>
 
-    <label for="emai"><b>Username</b></label>
-    <input  id="emai" type="text" placeholder="Username" name="username" required>
+        <label for="emai"><b>Username</b></label>
+        <input id="emai" type="text" placeholder="Username" name="user_name" required>
 
-    <label for="pswd"><b>Password</b></label>
-    <input id="pswd" type="password" placeholder="Enter Password" name="psw" required>
+        <label for="pswd"><b>Password</b></label>
+        <input id="pswd" type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
 </div>
 <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5XKQ8xNqMp0" allowfullscreen></iframe>
 </div>
+<div class="d-flex flex-sm-column">Main Stuff</div>
+<p class="uploadDescription">Upload your media here:</p>
+<form action="/upload" class="userupload" method="post">
+    <div class="input-group">
+        <input type="text" name="upload" class="form-control"
+               placeholder="Paste your picture url, or the youtube-link here" aria-label=""
+               aria-describedby="basic-addon1">
+        <div class="input-group-append">
+            <button class="btn btn-dark" type="submit">upload</button>
+        </div>
+    </div>
+</form><p class="uploadDescription">Add title for it:</p>
+<form action="/upload" class="userupload" method="post">
+    <div class="input-group">
+        <input type="text" name="uploadTitle" class="form-control" placeholder="Write here" aria-label=""
+               aria-describedby="basic-addon1">
+        <div class="input-group-append">
+            <button class="btn btn-dark" type="submit">submit</button>
+        </div>
+    </div>
+</form>
+<div id="makespace">
+    <div class="tartalom"><a href="https://fackit.nl/wp-content/uploads/2016/08/Techno-Croptop-Fack-It-Store.jpg"><img
+            class="clickedpictute"
+            src="https://fackit.nl/wp-content/uploads/2016/08/Techno-Croptop-Fack-It-Store.jpg" alt="techno"></a>
+        <h3>Dat ass</h3><input type="text" class="number" value="0" readonly/>
+        <input class="likebutton" type="button" onclick="incrementValue()" value="🖤"/></div>
+</div><p>ddd</p>
+<div class="fixed-bottom bg-dark">info@dichterbeide.com</div>
 
-<p><br>svsdvsdvdv<br>gbdbgdsbgsdb<br>srgbrsbrstbsrb<br>gbsdbsdbsd<br>evwevesvservw<br><br></p>
-<div id="makespace"><input type="button" onclick="ali()" id="aliver" value="tester"></div><p>ddd</p>
 {% endblock %}

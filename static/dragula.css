@@ -1,0 +1,24 @@
+.movingObject {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+}
+
+#right {
+    background-color: #555555;
+}
+
+#left {
+    background-color: #9C1A1C;
+}
+.moveable {
+    font-size: 2rem;
+}
+
+#rightup {
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background-color: #A5D6D9;
+}
