@@ -1,0 +1,37 @@
+#callback {
+    background-color: #A5D6D9;
+    position: relative;
+}
+
+.second-excersise {
+    display: inline-block;
+}
+
+#secondCallback {
+    background-color: lightsteelblue;
+}
+
+#visitedContainer {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+
+}
+
+#firstE {
+    display: inline-block;
+}
+
+#counter {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#inline {
+    display: inline-block;
+}
+#guessGameContainer {
+    position: relative;
+    background-color: mediumspringgreen;
+}

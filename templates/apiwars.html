@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Api Wars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" deferc></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/apiwars.css">
+    <meta name="description" content="ApiWars">
+    <script src="/static/apiwars.js" defer></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/apiwars">Planet list</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Vote statistic<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="navRegi">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="navLogin">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="navLogout" href="/apiwarsLogout">Logout</a>
+            </li>
+            <li class="nav-item" id="johnDoemobile">
+                {% if session.username %}
+                <p>Logged in as {{session.username}}</p>
+                {% else %}
+                <style>.voteButton {display:none;}</style>
+                <p>Not logged in</p>{% endif %}
+            </li>
+            {% if session.username %}
+            <p id="johnDoe">Logged in as {{ session.username }}</p>
+            {% else %}
+            <style>.voteButton {display:none;}</style>
+            <p id="johnDoe">Not logged in</p>{% endif %}
+        </ul>
+    </div>
+</nav>
+<h1>Star Wars Universe Planets</h1>
+<form action="/regapiwars" id="registration" method="POST">
+    <h2>Registration</h2>
+    <div class="form-group">
+        <label for="TextInput">Username:</label>
+        <input type="text" id="TextInput" class="form-control" placeholder="Type here.." name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="TextInputi">Password:</label>
+        <input type="password" id="TextInputi" class="form-control" placeholder="Type here.." name="password" required>
+    </div>
+
+    <button type="submit" id="regsubmit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-dark" id="regcancel">Cancel</button>
+
+</form>
+<form action="/loginapiwars" id="login" method="POST">
+    <h2>Login</h2>
+    <div class="form-group">
+        <label for="TextInput">Username:</label>
+        <input type="text" id="TextInputo" class="form-control" placeholder="Type here.." name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="TextInputi">Password:</label>
+        <input type="password" id="TextInpute" class="form-control" placeholder="Type here.." name="password" required>
+    </div>
+
+    <button type="submit" id="logsubmit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-dark" id="logcancel">Cancel</button>
+
+</form>
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" id="previousTableFragment" tabindex="-1">Previous</a>
+        </li>
+
+        <li class="page-item">
+            <a class="page-link" id="nextTableFragment">Next</a>
+        </li>
+    </ul>
+</nav>
+<div id="resident" style="display: none"></div>
+<table class="table table-striped" id="planetTable">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+        <th>Diameter</th>
+        <th>Climate</th>
+        <th>Terrain</th>
+        <th>Surface Water percentage</th>
+        <th>Population</th>
+        <th>Resident(s)</th>
+        <th></th>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>

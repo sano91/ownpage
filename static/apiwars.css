@@ -1,0 +1,66 @@
+#johnDoe {
+    position: absolute;
+    right: 44px;
+    bottom: 0;
+}
+
+#johnDoemobile {
+    display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    #johnDoe {
+        display: none;
+    }
+
+    #johnDoemobile {
+        display: block;
+    }
+
+}
+
+#registration {
+    background-color: #cccccc;
+}
+
+#navRegi {
+    cursor: pointer;
+}
+
+#registration {
+    display: none;
+}
+
+#login {
+    display: none;
+}
+
+#navLogin {
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    font-size: larger;
+    color: #444444;
+    text-align: center;
+    background-color: beige;
+
+}
+
+tr:nth-child(odd) {
+    font-size: larger;
+    color: maroon;
+    text-align: center;
+    background-color: bisque;
+}
+th {
+    color: chocolate;
+    background-color: antiquewhite;
+}
+
+#nextTableFragment {
+    cursor: pointer;
+}
+#previousTableFragment {
+    cursor: pointer;
+}

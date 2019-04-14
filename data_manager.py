@@ -47,3 +47,27 @@ def get_validation(cursor, user_id, pw):
     else:
         return False
 
+@connection.connection_handler
+def new_api_wars_user(cursor, new_name, new_password):
+
+    new_password = util.hash_password(new_password)
+
+    cursor.execute("""
+    insert into starwarsuser(name, password)
+    values (%(name)s, %(hashed_password)s);
+    """,
+            {'name': new_name, 'hashed_password': new_password})
+
+@connection.connection_handler
+def apiwarslogin(cursor, name, password):
+
+    cursor.execute("""
+    select password from starwarsuser
+    where name = %(name)s;
+    """,
+                   {'name': name})
+    result = cursor.fetchall()
+    validation = util.verify_password(password, result[0]["password"])
+    if validation == True:
+        return True
+

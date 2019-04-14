@@ -65,8 +65,9 @@ function blckbg() {
 
 function incrementValue()
 {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
+    let value = parseInt(document.getElementById('like').value, 10);
+    let likes = document.getElementById("like")
     value++;
-    document.getElementsByClassName('number').value = value;
+    let increasedLikes = value.toString();
+    likes.textContent = increasedLikes;
 }
