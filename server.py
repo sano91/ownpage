@@ -132,6 +132,10 @@ def apiwarsLogout():
     session.pop('username', None)
     return redirect('/apiwars')
 
+@app.route('/trello')
+def trello():
+    return render_template('trello.html')
+
 
 
 if __name__ == "__main__":

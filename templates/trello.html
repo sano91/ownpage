@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" deferc></script>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"
+                integrity="sha256-ug4bHfqHFAj2B5MESRxbLd3R3wdVMQzug2KHZqFEmFI=" crossorigin="anonymous" defer></script>
+        <link rel="stylesheet" href="/static/trello.css">
+        <script src="/static/trello.js" defer></script>
+    </head>
+<body>
+
+
+<div class="container">
+
+
+    <div id="card1">
+    <div class="column to-do-column">
+      <div class="column-header">
+        <h4>To Do</h4>
+      </div>
+      <ol type="1"  start="0" class="task-list" id="to-do">
+        <li class="task" id="analysis">
+          <p>Analysis</p>
+        </li>
+        <li class="task" id="coding">
+          <p>Coding</p>
+        </li>
+        <li class="task" id="card-sorting">
+          <p>Card Sorting</p>
+        </li>
+        <li class="task" id="measure">
+          <p>Measure</p>
+        </li>
+      </ol>
+    </div>
+    </div>
+    <div id="card2">
+    <div class="column doing-column">
+      <div class="column-header">
+        <h4>Doing</h4>
+      </div>
+      <ol type="1"  start="0" class="task-list" id="doing">
+        <li class="task">
+          <p>Hypothesis</p>
+        </li>
+        <li class="task">
+          <p>User Testing</p>
+        </li>
+        <li class="task">
+          <p>Prototype</p>
+        </li>
+      </ol>
+    </div></div>
+    <div id="card3">
+    <div class="column done-column">
+      <div class="column-header">
+        <h4>Done</h4>
+      </div>
+      <ol type="1"  start="0" class="task-list" id="done">
+        <li class="task">
+          <p>Ideation</p>
+        </li>
+        <li class="task">
+          <p>Sketches</p>
+        </li>
+      </ol>
+    </div></div>
+    <div id="card4">
+    <div class="column trash-column">
+      <div class="column-header">
+        <h4>Trash</h4>
+      </div>
+      <ol type="1"  start="0" class="task-list" id="trash">
+        <li class="task">
+          <p>Interviews</p>
+        </li>
+        <li class="task">
+          <p>Research</p>
+        </li>
+
+      </ol>
+      <div class="column-button">
+        <button class="button delete-button" onclick="emptyTrash()">Delete</button>
+      </div>
+    </div></div>
+
+
+</div>
+<ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ol>
+
+
+
+</body>
+</html>
