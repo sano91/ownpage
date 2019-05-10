@@ -38,3 +38,4 @@ const cardElement1 = createCard(
 );
 
 document.querySelector('#container').appendChild(cardElement);
+

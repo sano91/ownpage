@@ -5,7 +5,7 @@
     <title>Api Wars</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" deferc></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
@@ -18,86 +18,49 @@
     <script src="/static/apiwars.js" defer></script>
 
 </head>
-<body>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/apiwars">Planet list</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <a class="navbar-brand" href="https://www.starwars.com/">Star Wars</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Vote statistic<span class="sr-only">(current)</span></a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navRegi">Registration</a>
+                <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal4">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navLogin">Login</a>
+                <a class="nav-link class" href="" data-toggle="modal" data-target="#exampleModal3">Registration</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navLogout" href="/apiwarsLogout">Logout</a>
+                <a class="nav-link" href="#!" data-toggle="modal" data-target="#exampleModalScrollable">Vote statistic</a>
             </li>
-            <li class="nav-item" id="johnDoemobile">
-                {% if session.username %}
-                <p>Logged in as {{session.username}}</p>
-                {% else %}
-                <style>.voteButton {display:none;}</style>
-                <p>Not logged in</p>{% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="/apiwarsLogout">Logout</a>
             </li>
-            {% if session.username %}
-            <p id="johnDoe">Logged in as {{ session.username }}</p>
-            {% else %}
-            <style>.voteButton {display:none;}</style>
-            <p id="johnDoe">Not logged in</p>{% endif %}
+            <li>{% if session.username %} <p class="loggedStatus" id="sessionName">{{ session.username }}</p>{% else %}
+                <p
+                        class="loggedStatus">Not logged in</p></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
-<h1>Star Wars Universe Planets</h1>
-<form action="/regapiwars" id="registration" method="POST">
-    <h2>Registration</h2>
-    <div class="form-group">
-        <label for="TextInput">Username:</label>
-        <input type="text" id="TextInput" class="form-control" placeholder="Type here.." name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="TextInputi">Password:</label>
-        <input type="password" id="TextInputi" class="form-control" placeholder="Type here.." name="password" required>
-    </div>
 
-    <button type="submit" id="regsubmit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-dark" id="regcancel">Cancel</button>
 
-</form>
-<form action="/loginapiwars" id="login" method="POST">
-    <h2>Login</h2>
-    <div class="form-group">
-        <label for="TextInput">Username:</label>
-        <input type="text" id="TextInputo" class="form-control" placeholder="Type here.." name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="TextInputi">Password:</label>
-        <input type="password" id="TextInpute" class="form-control" placeholder="Type here.." name="password" required>
-    </div>
+<nav aria-label="">
+    <ul class="pagination" id="skipper">
 
-    <button type="submit" id="logsubmit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-dark" id="logcancel">Cancel</button>
-
-</form>
-<nav aria-label="...">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" id="previousTableFragment" tabindex="-1">Previous</a>
-        </li>
-
-        <li class="page-item">
-            <a class="page-link" id="nextTableFragment">Next</a>
-        </li>
     </ul>
 </nav>
-<div id="resident" style="display: none"></div>
+
+
 <table class="table table-striped" id="planetTable">
     <thead>
     <tr>
@@ -112,7 +75,156 @@
         <th></th>
     </tr>
     </thead>
+    <tbody id="planetTableBody"></tbody>
 </table>
 
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="residentPlanetHeader">
+
+
+            <table class="table table-xl-responsive">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Mass</th>
+                    <th>Hair color</th>
+                    <th>Skin color</th>
+                    <th>Eye color</th>
+                    <th>Birth year</th>
+                    <th>Gender</th>
+
+                </tr>
+                </thead>
+                <tbody id="residentMODAL"></tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for registration -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModal3Label">Registration</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/regapiwars" method="post">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">User name:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="name"
+                               placeholder="type here.."
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Password:</label>
+                        <input class="form-control bbb" id="formGroupExampleInput2" name="password"
+                               placeholder="type here.."
+                               type="password" minlength="1 " required><input id="firstPWtoShow" type="checkbox"
+                                                                              aria-label="Checkbox for following text input">check
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput3">Password again:</label>
+                        <input class="form-control bbb" id="formGroupExampleInput3" placeholder="type here.."
+                               type="password" minlength="1" required><input id="secondPWtoShow" type="checkbox"
+                                                                             aria-label="Checkbox for following text input">check
+                    </div>
+                    <h4 id="passwordCheck">Check password</h4>
+                    <div id="matchOrNot"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-info">Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for login -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModal4Label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModal4Label">Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/loginapiwars" method="post">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">User name:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput4" name="name"
+                               placeholder="type here.."
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInput3">Password again:</label>
+                        <input class="form-control bbb" id="formGroupExampleInput6" name="password"
+                               placeholder="type here.."
+                               type="password" minlength="1" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-info">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenteredLabel">Votes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+
+                        <th>Planet</th>
+                        <th>Vote</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if votes %}
+                    {% for vote in votes %}
+                    <tr>
+                        <td>{{ vote.planet_name }}</td>
+                        <td>{{ vote.votes }}</td>
+                    </tr>
+                    {% endfor %}{% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

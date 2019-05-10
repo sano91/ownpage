@@ -64,3 +64,109 @@ th {
 #previousTableFragment {
     cursor: pointer;
 }
+
+.planetResident{
+    cursor: pointer;
+    color: #30799B;
+    transition: background-color 0.3s ease-in-out;
+}
+.planetResident:hover{
+    background-color: #dddddd;
+}
+
+.page-link {
+    cursor: pointer;
+}
+#modalPlanetName{
+    text-align: center;
+    position: center;
+    background-color: #eeeeee;
+    font-weight: bolder;
+    color: darkblue;
+}
+.loggedStatus{
+    left: 88%;
+    text-align: center;
+    position: absolute;
+}
+#passwordCheck{
+    color: #444444;
+    font-style: oblique;
+    cursor: pointer;
+    transition:  color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+#passwordCheck:hover{
+    color: dodgerblue;
+    font-size: 3rem;
+}
+
+.come {
+  animation: come 4s ;
+    color: mediumspringgreen;
+    letter-spacing: 1rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+@keyframes come {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#matchOrNot {
+    height: auto;
+    width: auto;
+}
+
+.falseCome{
+    animation: falsecome 4s;
+    color: crimson;
+    letter-spacing: 1rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+@keyframes falsecome {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.nav-link{
+    cursor: pointer;
+}
+
+.class {
+    cursor: pointer;
+}
+
+.voteBtn {
+    font-size: x-large;
+    color: coral;
+    background: papayawhip;
+    border: 2px solid brown;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out, border-right-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.voteBtn:hover {
+    opacity: 1;
+    border-right-color: #A5D6D9;
+    border-bottom-color: #30799B;
+}
+
+.none {
+    display: none;
+}
+
+#session {
+    left: 88%;
+    text-align: center;
+    position: absolute;
+}

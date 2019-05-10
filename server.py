@@ -105,9 +105,10 @@ def modules():
 
 @app.route('/apiwars')
 def apiwars():
-    return render_template("apiwars.html")
+    votes = data_manager.get_planet_votes()
+    return render_template("apiwars.html", votes=votes)
 
-@app.route('/regapiwars', methods=['POST'])
+@app.route('/regapiwars', methods=['post'])
 def regapiwars():
     new_name = request.form.get("name")
     new_password = request.form.get("password")
@@ -119,18 +120,36 @@ def regapiwars():
 def loginapiwars():
     name = request.form.get('name')
     password = request.form.get('password')
+
     valid_user = data_manager.apiwarslogin(name, password)
     if valid_user == True:
         session['username'] = name
         return redirect('/apiwars')
     else:
-        return render_template('apiwars.html', not_valid=True)
+        votes = data_manager.get_planet_votes()
+        return render_template('apiwars.html', votes=votes)
 
 
 @app.route('/apiwarsLogout')
 def apiwarsLogout():
     session.pop('username', None)
     return redirect('/apiwars')
+
+
+@app.route('/vote/<planet>')
+def vote(planet):
+
+    qplanet = data_manager.check_planet(planet)
+    if qplanet:
+        current_vote = data_manager.get_planet_vote(planet)
+
+        vote_new = current_vote['votes']+1
+        data_manager.add_planet_vote(planet, vote_new)
+        votes = data_manager.get_planet_votes()
+    else:
+        data_manager.add_new_planet(planet)
+        votes = data_manager.get_planet_votes()
+    return render_template('apiwars.html', votes=votes)
 
 
 
