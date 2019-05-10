@@ -1,24 +1,45 @@
 .movingObject {
     display: inline-block;
-    height: 200px;
-    width: 200px;
+    height: auto;
+    width: 300px;
+    min-height: 50px;
 }
 
-#right {
+#innerfrst {
     background-color: #555555;
 }
 
-#left {
+#innerscnd {
     background-color: #9C1A1C;
 }
 .moveable {
     font-size: 2rem;
+    height: auto;
+    width: fit-content;
 }
 
-#rightup {
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    height: 300px;
+#innerthrd {
+
     background-color: #A5D6D9;
+}
+
+#innerfrth {
+
+
+    background-color: hotpink;
+}
+
+#big-container {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    background-color: mediumspringgreen;
+}
+.cardsplace {
+    height: auto;
+    width: auto;
+    padding: 20px;
+    background-color: peachpuff;
+    display: inline;
+
 }

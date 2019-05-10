@@ -1,0 +1,219 @@
+
+
+header h1 {
+  opacity: 0.8;
+  font-size: 2.8rem;
+  margin: 4rem auto;
+  border-radius: 1.2rem ;
+}
+
+p {
+  border-radius: 1.2rem;
+}
+
+
+
+header,
+footer {
+  width: 31rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 1.2rem;
+}
+
+.add-task-container {
+
+  display: flex;
+  width: 20rem;
+  height: 5.3rem;
+  margin: auto;
+  background: #a8a8a8;
+  border: #000013 0.2rem solid;
+  border-radius: 1.2rem;
+  padding: 0.4rem;
+}
+
+h1,
+h4 {
+
+  border-radius: 1.2rem;
+}
+
+.container {
+  display: flex;
+}
+
+.columns {
+  display: flex;
+  align-items: flex-start;
+  margin: 1.6rem auto;
+  border-radius: 1.2rem;
+}
+
+.column {
+  width: 8.4rem;
+  margin: 0 0.6rem;
+  background: #a8a8a8;
+  border: #000013 0.2rem solid;
+  border-radius: 1.2rem;
+}
+
+.column-header {
+  padding: 0.1rem;
+  border-bottom: #000013 0.2rem solid;
+  border-radius: 1.2rem;
+}
+
+.column-header h4 {
+  text-align: center;
+  border-radius: 1.2rem;
+}
+
+.to-do-column .column-header {
+  background: #D3E7E9;
+}
+
+.doing-column .column-header {
+  background: moccasin;
+}
+
+.done-column .column-header {
+  background: peachpuff;
+}
+
+.trash-column .column-header {
+  background: antiquewhite;
+}
+
+.task-list {
+  min-height: 3rem;
+}
+
+ol {
+
+  margin: 0;
+  padding: 0;
+  border-radius: 1.2rem;
+}
+
+li {
+
+  border-radius: 1.2rem;
+}
+
+.column-button {
+  text-align: center;
+  padding: 0.1rem;
+  border-radius: 1.2rem;
+}
+
+.button {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  border: #000013 0.14rem solid;
+  border-radius: 1.2rem;
+  color: #000013;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+
+}
+
+.delete-button {
+  background-color: red;
+  margin: 0.1rem auto 0.6rem auto;
+}
+
+.delete-button:hover {
+  background-color: #86989B;
+}
+
+.add-button {
+  background-color: #fafafa;
+  padding: 0 1rem;
+  height: 2.8rem;
+  width: 10rem;
+  margin-top: 0.6rem;
+  border-radius: 1.2rem;
+}
+
+.add-button:hover {
+  background-color: #dddddd;
+}
+
+.task {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  list-style-type: none;
+  background: #fafafa;
+  transition: all 0.3s;
+  margin: 0.4rem;
+  height: 4rem;
+  border: #000013 0.15rem solid;
+  border-radius: 1.2rem;
+  cursor: move;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#taskText {
+  background: blanchedalmond;
+  border: #000013 0.15rem solid;
+  border-radius: 1.2rem;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  height: 4rem;
+  width: 7rem;
+  margin: auto 0.8rem auto 0.1rem;
+
+}
+
+.task p {
+  margin: auto;
+  border-radius: 1.2rem;
+}
+/*
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  border-radius: 1.2rem;
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+:root {
+  font-size: calc(0.5vw + 1vh);
+}
+*/
+* {
+
+  box-sizing: border-box;
+}
+
+#card1,#card2,#card3,#card4 {
+  min-height: 4rem;
+  min-width: 13rem;
+  background-color: #9C1A1C;
+}
+.task-list {
+  background-color: mediumspringgreen;
+}
+.doing-column {
+  background-color: mediumspringgreen;
+}
+
+
